@@ -4,18 +4,6 @@ target/
 !**/src/main/**
 !**/src/test/**
 
-### Eclipse ###
-bin/
-tmp/
-*.tmp
-*.bak
-*.swp
-*~.nib
-local properties
-.settings/
-.loadpath
-.recommenders
-
 ### STS ###
 .apt_generated
 .classpath
@@ -41,10 +29,3 @@ build/
 
 ### VS Code ###
 .vscode/
-
-### Eclipse Patch ###
-# Eclipse Core
-.project
-
-# JDT-specific (Eclipse Java Development Tools)
-.classpath
