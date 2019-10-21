@@ -15,7 +15,6 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @Component
 public class Recipe {
-<<<<<<< HEAD
 	
 	private Long id;
 	private String title;
@@ -23,12 +22,6 @@ public class Recipe {
 	private List<String> ingre;
 	private String date;
 
-=======
-	private String title;
-	private List<String> content;
-	private String path;
-	
->>>>>>> feature/Login
 	public void setContent(List<String> content) {
 		this.content = new ArrayList<String>(content);
 	}
@@ -37,8 +30,4 @@ public class Recipe {
 		this.content.add(string);
 	}
 
-<<<<<<< HEAD
-=======
-
->>>>>>> feature/Login
 }

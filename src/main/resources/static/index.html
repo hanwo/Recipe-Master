@@ -101,11 +101,13 @@
 					<div class="col-md-12 col-sm-12 text-center">
 					<span class="subheading">Recipe Master</span>
 					<br><br>
-					<form action="#" class="search-form">
+					<form action="/move" class="search-form" id="testForm" method="get">
 		                <div class="form-group">
 		                  <span class="icon icon-search"></span>
-		                  <input type="text" class="form-control" placeholder="Type a keyword and hit enter">
+		                  <input type="text" class="form-control" name="find" id="find" placeholder="Type a keyword and hit enter"/>
+		                  <br>
 		                </div>
+		                <button type="submit">검색</button>
 		            </form>
 					</div>
 				</div>

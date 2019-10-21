@@ -78,15 +78,32 @@
 		<div class="container">
 				<div class="comment-form-wrap pt-5">
 					<h3 class="mb-5 h4 font-weight-bold p-4 bg-light">자기만의 레시피를 등록해보세요 !</h3>
-					<form action="#" class="p-4 p-md-5 bg-light">
-						
-
-					</form>
+					<div class = showimg></div>
+					<div class = "showingre"><br>재료</div>
+					<div class = "showrecipe"><br>레시피</div>
 				</div>
 			</div>
 	</section>
-	<script>
-		axios.get("http://127.0.0.1:9002/getAll")
+	<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+	<script type="text/javascript">
+		axios.get("http://127.0.0.1:9001/doc/{id}") //127.0.0.1:9000/doc/{docid}
+			.then(resData =>{
+				
+				const title = document.getElementsByClassName("mb-5 h4 font-weight-bold p-4 bg-light");
+				const showImg = document.getElementsByClassName("showimg");
+				const showIngre = document.getElementsByClassName("showingre");
+				const showRecipe = document.getElementsByClassName("showrecipe");
+				
+				title[0].innerHTML='<span>' + resData.data[0].sourceAsMap.title + '<span>';
+				showImg[0].innerHTML = "<img src = " + "Project_img/" + 6920000 + ".jpg" + "/>"
+				for(let i = 0 ; i < resData.data[0].sourceAsMap.ingre.length ; i++){
+					showIngre[0].innerHTML += '<br>'+ resData.data[0].sourceAsMap.ingre[i];
+				}
+				for(let i = 0 ; i < resData.data[0].sourceAsMap.content.length ; i++){
+					showRecipe[0].innerHTML += '<br> 레시피 ' + i + ' : ' + resData.data[0].sourceAsMap.content[i] + '<br>';
+				}
+					console.log(showIngre[0])
+			})
 	</script>
 
 	<!-- Footer -->
