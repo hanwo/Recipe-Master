@@ -1,5 +1,6 @@
 package com.recipe.project.configuration;
 
+<<<<<<< HEAD
 import java.io.File;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
@@ -15,6 +16,12 @@ import org.elasticsearch.client.RestClient;
 import org.elasticsearch.client.RestHighLevelClient;
 import org.elasticsearch.common.xcontent.XContentFactory;
 import org.elasticsearch.rest.RestStatus;
+=======
+
+import org.apache.http.HttpHost;
+import org.elasticsearch.client.RestClient;
+import org.elasticsearch.client.RestHighLevelClient;
+>>>>>>> feature/Login
 import org.springframework.context.annotation.Configuration;
 
 @Configuration
@@ -23,6 +30,7 @@ public class Elasticsearch {
     public RestHighLevelClient createConnection() {
 		System.out.println("Connet OK");
         return new RestHighLevelClient(RestClient.builder(
+<<<<<<< HEAD
                  new HttpHost("127.0.0.1",9200,"http")
        ));
     }
@@ -43,4 +51,9 @@ public class Elasticsearch {
         
         return time;
      }
+=======
+                            new HttpHost("127.0.0.1",9200,"http")
+                    ));
+    }
+>>>>>>> feature/Login
 }
