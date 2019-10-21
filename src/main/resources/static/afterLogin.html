@@ -71,14 +71,18 @@
 </style>
 </head>
 <body>
-	<nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
+	<nav
+		class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
 		<div class="container">
-			<a class="navbar-brand" href="index.html">Recipe Master</a>
-			<a href="login.html">Login</a>
-			&nbsp;&nbsp;
-			<a href="join.html">Sign up</a>
+			<a class="navbar-brand" href="afterLogin.html">Recipe Master</a>
+			<a href = "index.html" onclick="sessionOut()">Logout</a>
+
 			<div class="collapse navbar-collapse" id="ftco-nav">
 				<ul class="navbar-nav ml-auto">
+					<li class="nav-item active"><a href="afterLogin.html" class="nav-link">Home</a></li>
+					<li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
+					<li class="nav-item"><a href="recipe.html" class="nav-link">Recipe</a></li>
+					<li class="nav-item"><a href="myPage.html" class="nav-link">My Page</a></li>
 				</ul>
 			</div>
 		</div>
@@ -96,14 +100,18 @@
 					<div class="col-md-12 col-sm-12 text-center">
 					<span class="subheading">Recipe Master</span>
 					<br><br>
-					로그인 시 다양한 서비스를 즐길 수 있어요 !
-					<br><br>
+					<form action="#" class="search-form">
+		                <div class="form-group">
+		                  <span class="icon icon-search"></span>
+		                  <input type="text" class="form-control" placeholder="Type a keyword and hit enter">
+		                </div>
+		            </form>
 					</div>
 				</div>
 			</div>
 		</div>
 	</section>
-	
+
 	<section class="ftco-section ftco-wrap-about">
 		<div class="container">
 			<div class="row">
@@ -386,7 +394,7 @@
 			</div>
 		</div>
 	</section>
-
+	
 	<footer class="ftco-footer ftco-bg-dark ftco-section">
 		<div class="container">
 			<div class="row mb-5">
@@ -424,14 +432,13 @@
 			<circle class="path" cx="24" cy="24" r="22" fill="none"
 				stroke-width="4" stroke-miterlimit="10" stroke="#F96D00" /></svg>
 	</div>
-	
+
 	<script>
-	function check() {
-		if(sessionStorage.length == 0) {
-			alert("로그인이 필요합니다.");
-			document.location.href = "login.html"
-		}
+	function sessionOut() {
+		sessionStorage.clear();
+		alert("로그아웃 되었습니다.");
 	}
+	
 	</script>
 
 	<script src="js/jquery.min.js"></script>
