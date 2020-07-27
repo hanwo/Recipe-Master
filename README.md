@@ -8,7 +8,7 @@ Semi Project : RecipeMaster
 * RDBMS : Oracle <br>
 * NoSQL : ElasticSearch(7.1.1)
 * Template : Thymeleaf
-* Web : Servlet, JSP <br>
+* Web : Servlet, JSP , Spring Boot<br>
 * Tool : Oven / ER Master / Kibana <br>
 * Crawling Site : 만개의 레시피(http://www.10000recipe.com/) <br>
 
