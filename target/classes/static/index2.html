@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<h3>test<h3>
+	
+	<div class="col-6">
+	   	레시피 전체 정보 가져오기<br>
+		<button onclick="getData('getAll')">클릭!</button>
+			  <button onclick='document.getElementById("RecipeBody4").innerHTML = "<span></span>"'>비우기</button>
+			  <br>
+			
+			<div id=RecipeBody4>
+			  <div class=Menucimg>
+			</div>
+		</div>
+	</div>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+	<script type="text/javascript">
+		function getData(sub){
+			axios.get("http://127.0.0.1:9000/" + sub)
+			.then(resData => {
+				if(sub == "getAll"){
+					if(resData.data.length == 0){
+						document.getElementById("RecipeBody4").innerHTML = "<span>레시피없음</span>";
+					}else{
+						document.getElementById("RecipeBody4").innerHTML = "<span></span>";
+						for(let i = 0 ; i < resData.data.length ; i++){
+							/* console.log( resData),*/
+							//console.log( resData.data),
+							//console.log(resData.data[i]),
+							// document.getElementById("menuimg").src = "/",
+								document.getElementById("RecipeBody4").innerHTML += "<br><span> 제목 : " + resData.data[i].title + "<br>",
+								// document.getElementById("menuimg").src += "Project_img/" + 692000 + i + ".jpg";
+								document.getElementById("RecipeBody4").innerHTML += "<img src = " + "Project_img/" + (6920000 + i) + ".jpg" + "/>",    
+								document.getElementById("RecipeBody4").innerHTML += "<br><span> 재료 : " + resData.data[i].ingre + "<br>",
+							// console.log(document.getElementById("menuimg").innerHTML)
+							console.log(resData.data[i].title);
+							for(let j = 0 ; j < resData.data[i].content.length ; j++){
+								document.getElementById("RecipeBody4").innerHTML += "<br> 레시피 "+ j + " : "+ resData.data[i].content[j] + "<br>"
+							}
+							/* console.log(resData.data.length); */
+							//console.log(i)
+							//console.log(resData.data[i].content);
+						}
+							
+					}
+				}
+			})
+		}
+	</script>
+</body>
+</html>

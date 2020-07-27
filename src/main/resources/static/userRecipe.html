@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<title>Recipe Master</title>
+<meta charset="utf-8">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<link
+	href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900"
+	rel="stylesheet">
+<link
+	href="https://fonts.googleapis.com/css?family=Great+Vibes&display=swap"
+	rel="stylesheet">
+
+<link rel="stylesheet" href="css/open-iconic-bootstrap.min.css">
+<link rel="stylesheet" href="css/animate.css">
+
+<link rel="stylesheet" href="css/owl.carousel.min.css">
+<link rel="stylesheet" href="css/owl.theme.default.min.css">
+<link rel="stylesheet" href="css/magnific-popup.css">
+
+<link rel="stylesheet" href="css/aos.css">
+
+<link rel="stylesheet" href="css/ionicons.min.css">
+
+<link rel="stylesheet" href="css/bootstrap-datepicker.css">
+<link rel="stylesheet" href="css/jquery.timepicker.css">
+
+
+<link rel="stylesheet" href="css/flaticon.css">
+<link rel="stylesheet" href="css/icomoon.css">
+<link rel="stylesheet" href="css/style.css">
+
+</head>
+<body>
+	<nav
+		class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light"
+		id="ftco-navbar">
+		<div class="container">
+			<a class="navbar-brand" href="#">Recipe Master</a>
+			<button class="navbar-toggler" type="button" data-toggle="collapse"
+				data-target="#ftco-nav" aria-controls="ftco-nav"
+				aria-expanded="false" aria-label="Toggle navigation">
+				<span class="oi oi-menu"></span> Menu
+			</button>
+
+			<div class="collapse navbar-collapse" id="ftco-nav">
+				<ul class="navbar-nav ml-auto">
+					<li class="nav-item"><a href="afterLogin.html" class="nav-link">Home</a></li>
+					<li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
+					<li class="nav-item active"><a href="recipe.html"
+						class="nav-link active">Recipe</a></li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+	<!-- END nav -->
+
+	<section class="hero-wrap hero-wrap-2"
+		style="background-image: url('images/bg_3.jpg');"
+		data-stellar-background-ratio="0.5">
+		<div class="overlay"></div>
+		<div class="container">
+			<div
+				class="row no-gutters slider-text align-items-end justify-content-center">
+				<div class="col-md-9 ftco-animate text-center mb-4">
+					<h1 class="mb-2 bread">User Recipe</h1>
+					<p class="breadcrumbs">
+						<span class="mr-2"><a href="index.html">Home <i
+								class="ion-ios-arrow-forward"></i></a></span> <span><a
+							href="about.html">About <i class="ion-ios-arrow-forward"></i></a></span>
+					</p>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section class="ftco-section">
+		<div class="container">
+				<div class="comment-form-wrap pt-5">
+					<h3 class="mb-5 h4 font-weight-bold p-4 bg-light">자기만의 레시피를 등록해보세요 !</h3>
+					
+					<!-- action="recipeCreate" -->
+					<form  name="myRecipe" class="p-4 p-md-5 bg-light" id="myRecipe" method="post">
+						<div class="form-group">
+							<label for="name">Title *</label> 
+							<input type="text" name="title" class="form-control" id="name">
+						<div class="form-group">
+							<label for="message">ingredient</label>
+							<textarea name="ingre[0]" id="message1" cols="30" rows="10" class="form-control"></textarea>
+						</div>
+						<div class="form-group">
+							<label for="message">Recipe 1</label>
+							<textarea name="content[0]" id="message3" cols="30" rows="10" class="form-control"></textarea>
+						</div>
+						<div class="form-group">
+							<label for="message">Recipe 2</label>
+							<textarea name="content[1]" id="message4" cols="30" rows="10" class="form-control"></textarea>
+						</div>
+
+						<div class="form-group">
+							<button onclick = "recipeCreate()"  value="Registe Recipe" class="btn py-3 px-4 btn-primary">버튼</button>
+						</div>
+					</form>
+						
+				</div>
+			</div>
+	</section>
+
+	<!-- Footer -->
+	<footer class="ftco-footer ftco-bg-dark ftco-section">
+		<div class="container">
+			<div class="row mb-5">
+				<div class="col-md-6 col-lg-3">
+					<div class="ftco-footer-widget mb-4">
+						<h2 class="ftco-heading-2">Feliciano</h2>
+						<p>Far far away, behind the word mountains, far from the
+							countries Vokalia and Consonantia, there live the blind texts.</p>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-12 text-center">
+
+					<p>
+						<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+						Copyright &copy;
+						<script>document.write(new Date().getFullYear());</script>
+						All rights reserved | This template is made with <i
+							class="icon-heart" aria-hidden="true"></i> by <a
+							href="https://colorlib.com" target="_blank">Colorlib</a>
+						<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+					</p>
+				</div>
+			</div>
+		</div>
+	</footer>
+
+
+	<!-- loader -->
+	<div id="ftco-loader" class="show fullscreen">
+		<svg class="circular" width="48px" height="48px">
+			<circle class="path-bg" cx="24" cy="24" r="22" fill="none"
+				stroke-width="4" stroke="#eeeeee" />
+			<circle class="path" cx="24" cy="24" r="22" fill="none"
+				stroke-width="4" stroke-miterlimit="10" stroke="#F96D00" /></svg>
+	</div>
+
+
+	<script src="js/jquery.min.js"></script>
+	<script src="js/jquery-migrate-3.0.1.min.js"></script>
+	<script src="js/popper.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script src="js/jquery.easing.1.3.js"></script>
+	<script src="js/jquery.waypoints.min.js"></script>
+	<script src="js/jquery.stellar.min.js"></script>
+	<script src="js/owl.carousel.min.js"></script>
+	<script src="js/jquery.magnific-popup.min.js"></script>
+	<script src="js/aos.js"></script>
+	<script src="js/jquery.animateNumber.min.js"></script>
+	<script src="js/bootstrap-datepicker.js"></script>
+	<script src="js/jquery.timepicker.min.js"></script>
+	<script src="js/scrollax.min.js"></script>
+	<script
+		src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
+	<script src="js/google-map.js"></script>
+	<script src="js/main.js"></script>
+
+	<script>
+	// 지인철
+	function recipeCreate() {
+		console.log(1);
+		//alert(sessionStorage.getItem(sessionStorage.key(0)));
+		//form.myRecipe.action = "/recipeCreate";
+		document.myRecipe.action = "/recipeCreate/" + sessionStorage.getItem(sessionStorage.key(0));
+		form.myRecipe.submit();
+	}
+		
+	</script>
+</body>
+</html>
